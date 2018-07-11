@@ -28,9 +28,17 @@ import org.springframework.context.annotation.Primary;
  *      2、 Spring 支持 @Resource (JSR250) 和@Inject(JSR330)  这两个注解是java规范
  *          @Resource 默认按照组件名称装配、单独使用，不支持@Primary
  *          @Inject (需要导入依赖 https://mvnrepository.com/artifact/javax.inject/javax.inject  )
+ *
+ *      3、@Autowired :可以写在构造器、参数、方法、属性上；都是从容器中获取组件的值
+ *             1) 、 [在方法上] @Bean + 方法参数  参数的值从容器获取,@Autowired 可以省略
+ *             2) 、 [在构造器上]  如果类中只有一个构造器，@Autowired 可以省略
+ *             3) 、 [在参数的位置]
+ *      4、 自定义组件想要使用Spring容器底层的一些组件（ApplicationContext,BeanFactory,xxx）;
+ *              自定义组件需要去实现xxxAware接口,在对象创建的时候,会调用接口规定的方法注入相关的组件；
+ *              ConfigurationClassPostProcessor、xxxProcessor  完成相应的功能
  */
 @Configuration
-@ComponentScan(value = {"com.xuan.controller","com.xuan.service","com.xuan.dao"})
+@ComponentScan(value = {"com.xuan.controller","com.xuan.service","com.xuan.dao","com.xuan.model"})
 public class IocConfigOfAutowired {
 
     @Primary

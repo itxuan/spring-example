@@ -3,6 +3,7 @@ package com.xuan.test;
 import com.xuan.beanconfig.IocConfigOfAutowired;
 import com.xuan.beanconfig.IocConfigOfLifeCycle;
 import com.xuan.dao.BookDao;
+import com.xuan.model.Student;
 import com.xuan.model.lifecycle.Train;
 import com.xuan.service.BookService;
 import org.junit.Test;
@@ -17,11 +18,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class IOC_AutowiredTest {
 
+    @Test
+    public void aware(){
+
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(IocConfigOfAutowired.class);
+        System.out.println(applicationContext.getBean(Student.class));
+
+        System.out.println(applicationContext);
+        ((AnnotationConfigApplicationContext) applicationContext).close();
+    }
 
     @Test
     public void lifecycleOfTrain(){
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(IocConfigOfAutowired.class);
-
         System.out.println(applicationContext.getBean(BookService.class));
 //        System.out.println(applicationContext.getBean(BookDao.class));
 
