@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/spring-annotation-root/annotation/annotation.iml" filepath="$PROJECT_DIR$/spring-annotation-root/annotation/annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-annotation-root/spring-5.0.7/spring-5.0.7.iml" filepath="$PROJECT_DIR$/spring-annotation-root/spring-5.0.7/spring-5.0.7.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-annotation-root/spring-annotation-root.iml" filepath="$PROJECT_DIR$/spring-annotation-root/spring-annotation-root.iml" />
     </modules>
   </component>

@@ -22,6 +22,12 @@
             <artifactId>spring-context</artifactId>
             <version>${project.spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${project.spring.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
         <!--@Inject 需要的依赖-->
         <dependency>
@@ -50,5 +56,54 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
+        <!--日志 接口再去看一下 apache 的log2j   -->
+
+
+        <!--
+            只要导入该依赖
+            https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+        -->
+        <!--<dependency>-->
+            <!--<groupId>ch.qos.logback</groupId>-->
+            <!--<artifactId>logback-classic</artifactId>-->
+            <!--<version>1.2.3</version>-->
+            <!--&lt;!&ndash;<scope>test</scope>&ndash;&gt;-->
+        <!--</dependency>-->
+
+
+        <!--slf4j是日志接口(日志规范)，logback是日志实现-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+        <!--logback的基础模块-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <!--slf4j的实现并整合，是log4j的改良版本-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.22.0-GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+
+
     </dependencies>
 </project>

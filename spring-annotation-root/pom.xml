@@ -6,6 +6,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>annotation</module>
+        <module>spring-5.0.7</module>
     </modules>
     <groupId>com.xuan</groupId>
     <artifactId>spring-annotation-root</artifactId>
@@ -14,6 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.spring.version>4.3.12.RELEASE</project.spring.version>
+        <project.spring5.0.7.version>5.0.7.RELEASE</project.spring5.0.7.version>
     </properties>
     <dependencyManagement>
         <dependencies>
