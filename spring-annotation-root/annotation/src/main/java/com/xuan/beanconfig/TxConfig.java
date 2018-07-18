@@ -23,6 +23,28 @@ import javax.sql.DataSource;
  *                              DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager(dataSource());
  *                              return dataSourceTransactionManager;
  *                          }
+ *          原理分析:
+ *              1、@EnableTransactionManagement
+ *                  利用TransactionManagementConfigurationSelector给容器添加组件
+ *                  导入两个组件
+ *                  （1） AutoProxyRegistrar
+ *                          1)、 给容器注册 InfrastructureAdvisorAutoProxyCreator 组件
+ *                          2）、InfrastructureAdvisorAutoProxyCreator 利用后置处理器在创建对象之后，返回一个代理对象（增强），代理对象执行方法利用拦截器链进行调用。
+ *                  （2） ProxyTransactionManagementConfiguration
+ *                          1、这是个配置类，给容器注册事务增强器  transactionAdvisor()
+ *                                  AnnotationTransactionAttributeSource
+ *                                  使用 SpringTransactionAnnotationParser、JtaTransactionAnnotationParser(或者Ejb3TransactionAnnotationParser)
+ *                                  事务拦截器：
+ *                                      TransactionInterceptor :保存了事务属性  SpringTransactionAnnotationParser
+ *                                      这是一个MethodInterceptor
+ *                                      在目标方法执行的时候
+ *                                          执行拦截器链 事务拦截器
+ *                                              1）获取事务的属性
+ *                                              2）  获取PlatformTransactionManager
+ *                                              3） 执行事务反射方法 出现异常进行回滚操作
+ *
+ *
+ *
  * @ModifyBy:
  */
 @Configuration
